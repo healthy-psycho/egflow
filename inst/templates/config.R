@@ -1,17 +1,25 @@
 ##================================================================
 ##               Global project variables go here               ==
 ##================================================================
-root <- rprojroot::is_git_root
+root          <- rprojroot::is_git_root
 
 ##----------------------------------------------------------------
-##               Default file names and locations               --
+##                       Path aliases                           --
 ##----------------------------------------------------------------
-config.pg_db_name    <- Sys.getenv("PG_DB_NAME")
-config.airtable.base <- Sys.getenv("AIRTABLE_BASE_ID")
-config.raw_dir <- fs::path("raw")
+assets_home   <- fs::path( "assets" )
+data_home     <- fs::path( assets_home, "/data" )
+images_home   <- fs::path( assets_home, "/images" )
+models_home   <- fs::path( assets_home, "/models" )
 
 ##----------------------------------------------------------------
-##                        Logging                               --
+##                       External                              --
 ##----------------------------------------------------------------
-logger::log_layout(logger::layout_glue_colors)
-logger::log_threshold(DEBUG)
+config.pg_db_name    <- Sys.getenv( "PG_DB_NAME" )
+config.airtable.base <- Sys.getenv( "AIRTABLE_BASE_ID" )
+
+##----------------------------------------------------------------
+##                       External                              --
+##----------------------------------------------------------------
+logger::log_layout( logger::layout_glue_colors )
+logger::log_threshold( DEBUG )
+

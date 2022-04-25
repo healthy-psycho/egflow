@@ -1,0 +1,33 @@
+---
+title: |
+  Scratch-pad
+description: |
+  Scratch-pad 
+author:
+  - name: Eric Gaudiello
+date: "`r Sys.Date()`"
+output: 
+  distill::distill_article:
+    toc: true
+    toc_depth: 3
+---
+
+```{r global_options, echo = FALSE}
+knitr::opts_chunk$set(
+  dpi = 600, 
+  echo = FALSE,
+  warning = FALSE, 
+  message = FALSE,
+  include = TRUE
+)
+```
+
+```{r source_local_files}
+root  <- rprojroot::is_git_root
+source( root$find_file( "packages.R" ) )
+ggplot2::theme_set( jtools::theme_nice() )
+```
+
+```{r load_current_global_assets}
+```
+

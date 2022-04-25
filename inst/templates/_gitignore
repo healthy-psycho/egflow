@@ -45,4 +45,7 @@ _targets/
 renv/
 
 # Ignore data files by default
-raw/*
+assets/*
+
+# Secrets files
+.Renviron
